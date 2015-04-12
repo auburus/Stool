@@ -1,0 +1,21 @@
+{
+  "name": "Stool",
+  "version": "0.1.0",
+  "authors": [
+    "Jordi Nonell"
+  ],
+  "license": "GPL v3",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ember": "~1.10.0",
+    "ember-data": "~1.0.0-beta.16",
+    "ember-template-compiler": "http://builds.emberjs.com/tags/v1.10.0-beta.3/ember-template-compiler.js"
+  }
+}

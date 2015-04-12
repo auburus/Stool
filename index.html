@@ -12,7 +12,7 @@
 			<li>Assignatures
 				<ul>
 					{{#each subject in model}}
-						<li>{{#link-to 'subject.info' subject}}{{subject.shortName}}{{/link-to}}</li>
+						<li>{{#link-to 'subject' subject}}{{subject.shortName}}{{/link-to}}</li>
 					{{/each}}
 				</ul>
 			</li>
@@ -30,7 +30,7 @@
 <script type="text/x-handlebars" data-template-name="subject">
 	<h1>{{model.name}}</h1>
 	<ul>
-		<li>{{#link-to 'subject.info'}}Informació{{/link-to}}</li>
+		<li>{{#link-to 'subject'}}Informació{{/link-to}}</li>
 		<li>{{#link-to 'subject.professors'}}Professors{{/link-to}}</li>
 		<li>{{#link-to 'subject.exams'}}Examens{{/link-to}}</li>
 		<li>{{#link-to 'subject.resources'}}Apunts{{/link-to}}</li>
@@ -39,7 +39,7 @@
 	{{outlet}}
 </script>
 
-<script type="text/x-handlebars" data-template-name="subject/info">
+<script type="text/x-handlebars" data-template-name="subject/index">
 	<h2>Info</h2>
 </script>
 <script type="text/x-handlebars" data-template-name="profile">

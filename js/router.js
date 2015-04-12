@@ -40,7 +40,7 @@ App.SubjectRoute = Ember.Route.extend({
 		}
 });
 
-App.InfoRoute = Ember.Route.extend({
+App.SubjectIndexRoute = Ember.Route.extend({
 		model: function(params) {
 				return this.modelFor('subject');
 		}

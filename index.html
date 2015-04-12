@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<script src="dist/libs.js"></script>
+</head>
+<body>
+<script type="text/x-handlebars" data-template-name="application">
+	<div class="sidebar">
+		<ul>
+			<li>{{#link-to "news"}}Notícies{{/link-to}}</li>
+			<li>Assignatures
+				<ul>
+					{{#each subject in model}}
+						<li>{{#link-to 'subject.info' subject}}{{subject.shortName}}{{/link-to}}</li>
+					{{/each}}
+				</ul>
+			</li>
+			<li>{{#link-to "profile"}}Perfil{{/link-to}}</li>
+		</ul>
+	</div>
+	<div class="main">
+		{{outlet}}
+	</div>
+</script>
+
+<script type="text/x-handlebars" data-template-name="news">
+	<h1>NEWS</h1>
+</script>
+<script type="text/x-handlebars" data-template-name="subject">
+	<h1>{{model.name}}</h1>
+	<ul>
+		<li>{{#link-to 'subject.info'}}Informació{{/link-to}}</li>
+		<li>{{#link-to 'subject.professors'}}Professors{{/link-to}}</li>
+		<li>{{#link-to 'subject.exams'}}Examens{{/link-to}}</li>
+		<li>{{#link-to 'subject.resources'}}Apunts{{/link-to}}</li>
+		<li>{{#link-to 'subject.reviews'}}Comentaris{{/link-to}}</li>
+	</ul>
+	{{outlet}}
+</script>
+
+<script type="text/x-handlebars" data-template-name="subject/info">
+	<h2>Info</h2>
+</script>
+<script type="text/x-handlebars" data-template-name="profile">
+	<h1>PERFIL</h1>
+</script>
+
+
+<script src="dist/stool.js"></script>
+</body>
+</html>

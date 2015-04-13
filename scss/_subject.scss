@@ -1,0 +1,54 @@
+
+$color: #000000;
+$color-active: #FFFFFF;
+$background-color: #FFFFFF;
+$background-color-hover: #E0E0E0;
+$background-color-active: #0088BB;
+
+@mixin tab() {
+	display: inline;
+	list-style-type: none;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.subject-menu {
+	padding: 0px;
+	margin: 10px 0px;
+
+	li {
+		@include tab();
+		margin: 0px 5px;
+
+		&:first-child {
+			margin: 0px 5px 0px 0px;
+		}
+
+		a {
+			padding: 5px 10px;
+			@include border-radius(4px);
+			background-color: $background-color;
+
+			color: $color;
+			text-decoration: none;
+			outline: 0px;
+
+			&:hover {
+				background-color: $background-color-hover;
+			}
+			&:visited {
+				color: $color;
+			}
+
+			&.active {
+				background-color: $background-color-active;
+				color: $color-active;
+			}
+		}
+	}
+}

@@ -20,16 +20,23 @@ module.exports = function(grunt) {
 				cssDest: 'dist/libs.css'
 			}
 		},
+		sass: {
+			dist: {
+				files: {
+					'dist/main.css': 'scss/main.scss'
+				}
+			}
+		},
 		watch: {
-				files: ['js/**/*.js'],
-				tasks: ['concat']
+				files: ['js/**/*.js', 'scss/*'],
+				tasks: ['concat', 'sass']
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-bower-concat');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 
-	grunt.registerTask('default', ['concat', 'bower_concat']);
-	grunt.registerTask('watch-files', ['concat']);
+	grunt.registerTask('default', ['concat', 'bower_concat', 'sass']);
 };
